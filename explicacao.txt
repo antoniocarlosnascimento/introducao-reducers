@@ -1,0 +1,5 @@
+     // [state: valor atualizado da state da funçao reduder (1° parametro da função), 
+        dispatch: as actios da função reduder (2º parametro da função)]                                    
+  const [state, dispatch] = useReducer(reducerFunction, initialState);
+                                   // (reducerFunction: nome dado para a funçao reducer, 
+                                       initialState: valor inicial do state da função reducer)

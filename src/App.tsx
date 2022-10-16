@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useContagem } from "./reducers/contagem";
+
 
 function App() {
+  const [contagem, contagemDispatch] = useContagem();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Contagem: {contagem.count}
+      <hr />
+      <button onClick={() => contagemDispatch({ type: "ADD" })}>Adicionar</button>
+      <button onClick={() => contagemDispatch({ type: "DEL" })}>Remover</button>
+      <button onClick={() => contagemDispatch({ type: "RESET" })}>Resetar</button>
     </div>
   );
 }
